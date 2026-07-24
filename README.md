@@ -76,7 +76,4 @@ mojito-cocktails/
 ├── package.json
 └── vite.config.js
 ```
-
-## 📄 Лицензия
-
 Проект создан в учебных/портфолио-целях.
