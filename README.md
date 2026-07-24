@@ -2,7 +2,7 @@
 
 Атмосферный лендинг для коктейль-бара **Velvet Pour**, построенный на **React 19** и **Tailwind CSS v4**, с киношными анимациями на **GSAP**: разбитый на буквы заголовок, эффекты по скроллу, параллакс и кастомная карусель рецептов.
 
-**🔗 Демо:** [mojito-cocktails-bay.vercel.app](https://mojito-cocktails-bay.vercel.app)
+**🔗 Демо:** [cocktails-mojito.vercel.app](https://cocktails-mojito.vercel.app)
 
 ## 📸 Скриншоты
 
