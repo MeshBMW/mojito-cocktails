@@ -1,8 +1,11 @@
 import { sliderLists } from "../../constants/index.js";
-import { useState } from "react";
+import {useRef, useState} from "react";
+import {useGSAP} from "@gsap/react";
+import gsap from "gsap";
 
 const Menu = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const contentRef = useRef(null);
 
   const totalCocktails = sliderLists.length;
 
@@ -18,6 +21,22 @@ const Menu = () => {
   const currentCocktail = getCocktailAt(0)
   const prevCocktail = getCocktailAt(-1)
   const nextCocktail = getCocktailAt(1)
+
+  useGSAP(() => {
+    gsap.fromTo('#title',
+      {opacity: 0, y: 100},
+      {opacity: 1, y: 0, duration: 1, ease: 'power1.inOut'})
+    gsap.fromTo('.cocktail img',
+      {opacity: 0, scale: 0.9, xPercent: -100},
+      {opacity: 1, scale: 1, xPercent: 0, duration: 1, ease: 'power1.inOut'})
+    gsap.fromTo('.details h2',
+      {opacity: 0, y: 100},
+      {opacity: 1, y: 0, duration: 1, ease: 'power1.inOut'})
+    gsap.fromTo('.details p',
+      {opacity: 0, y: 100},
+      {opacity: 1, y: 0, duration: 1, ease: 'power1.inOut', stagger: 0.1}
+    )
+  }, [currentIndex])
 
   return (
     <section id='menu' aria-labelledby='menu-heading'>
@@ -58,6 +77,16 @@ const Menu = () => {
         </div>
         <div className='cocktail'>
           <img src={currentCocktail.image} className='object-contain' alt=''/>
+        </div>
+        <div className='recipe'>
+          <div className='info' ref={contentRef}>
+            <p>Recipe for:</p>
+            <p id='title'>{currentCocktail.name}</p>
+          </div>
+          <div className='details'>
+          <h2>{currentCocktail.title}</h2>
+          <p>{currentCocktail.description}</p>
+          </div>
         </div>
       </div>
     </section>
