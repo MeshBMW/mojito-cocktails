@@ -6,9 +6,6 @@
   font-family: "Modern Negra";
   src: url("/fonts/Modern Negra Demo.ttf") format("truetype");
 }
-h2 {
-  background-filter: blur(10px);
-}
 @theme {
   --color-yellow: #e7d393;
   --color-white-100: #efefef;
