@@ -40,7 +40,7 @@ useGSAP(() =>{
         <div>
           <h3>Contact Us</h3>
           <p>(555) 987-6543</p>
-          <p>mojitococktailsclient@gmail.com</p>
+          <p>mojitococktails-client@gmail.com</p>
         </div>
         <div>
           <h3>Open Every Day</h3>
